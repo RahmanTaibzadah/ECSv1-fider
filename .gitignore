@@ -1,0 +1,43 @@
+# --- Terraform ---
+# .tfstate holds real infra data (sometimes secrets); never belongs in git.
+**/.terraform/*
+*.tfstate
+*.tfstate.*
+*.tfvars
+!*.tfvars.example
+crash.log
+crash.*.log
+.terraform.lock.hcl.bak
+
+# --- Go (Fider backend) ---
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+*.test
+*.out
+vendor/
+
+# --- Node (Fider frontend build) ---
+node_modules/
+npm-debug.log*
+dist/
+build/
+
+# --- Env / secrets ---
+# Real local env vars (DB passwords, JWT secret) — never committed.
+# The .example version IS committed so others know what keys are needed.
+.env
+.env.*
+!.env.example
+
+# --- Docker ---
+*.pid
+
+# --- OS / editor junk ---
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.swp
