@@ -1,0 +1,4 @@
+[submodule "app/fider"]
+	path = app/fider
+	url = https://github.com/getfider/fider.git
+	branch = v0.21.1
