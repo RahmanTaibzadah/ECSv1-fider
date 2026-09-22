@@ -1,0 +1,23 @@
+services:
+  db:
+    image: postgres:16
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: fider
+      POSTGRES_PASSWORD: fider_dev_only
+      POSTGRES_DB: fider
+    volumes:
+      - fider_local_pgdata:/var/lib/postgresql/data
+
+  fider:
+    image: getfider/fider:0.21.1
+    restart: unless-stopped
+    depends_on:
+      - db
+    ports:
+      - "3000:3000"
+    env_file:
+      - .env
+
+volumes:
+  fider_local_pgdata:
