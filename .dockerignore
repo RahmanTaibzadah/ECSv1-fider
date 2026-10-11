@@ -1,0 +1,11 @@
+.git
+.gitmodules
+app/fider/node_modules
+app/fider/dist
+app/fider/.git
+*.md
+.env
+.env.example
+docker-compose.local.yml
+infra
+.github
